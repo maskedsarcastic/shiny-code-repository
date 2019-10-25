@@ -192,4 +192,3 @@ $('#language').on('change', function() {
 getParam();
 });
 
-document.getElementById("reset").addEventListener("click", resetList);

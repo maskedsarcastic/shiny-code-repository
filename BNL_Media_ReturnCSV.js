@@ -43,7 +43,7 @@ function generateTablePLP(data) {
     }
   }
   for (j = 2022; j >= 2012; j--) {
-    html += '<h2>' + j + '</h2><ul>';
+    html += '<h3>' + j + '</h3><ul>';
     if (language == "SelectLang" && mediatype == "SelectMed") {
       for (i = 1; i < data.length; i++) {
         filterResults();
@@ -68,7 +68,7 @@ function generateTablePLP(data) {
         }
       }
     }
-    if (html == '<h2>' + j + '</h2><ul>') {
+    if (html == '<h3>' + j + '</h3><ul>') {
       html = '';
     }
     html += '</ul>'
@@ -112,7 +112,7 @@ function generateTableOSS(data) {
     }
   }
   for (j = 2022; j >= 2012; j--) {
-    html += '<h2>' + j + '</h2><ul>';
+    html += '<h3>' + j + '</h3><ul>';
     if (language == "SelectLang" && mediatype == "SelectMed") {
       for (i = 1; i < data.length; i++) {
         filterResults();
@@ -137,7 +137,7 @@ function generateTableOSS(data) {
         }
       }
     }
-    if (html == '<h2>' + j + '</h2><ul>') {
+    if (html == '<h3>' + j + '</h3><ul>') {
       html = '';
     }
     html += '</ul>'

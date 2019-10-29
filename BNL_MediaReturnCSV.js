@@ -29,7 +29,7 @@ function generateTableOSS(data) {
     var lang = data[i][9];
     var format = data[i][9];
     var format2 = data[i][10];
-    var broken = data[i][11]
+    var broken = data[i][11];
     if (day !== '' && year !== '') {
       date = ' - ' + day + '/' + month + '/' + year
     } else if (day == '' && year !== '') {

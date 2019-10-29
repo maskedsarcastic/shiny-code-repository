@@ -47,7 +47,7 @@ function generateTableOSS(data) {
       html += '<li class="returned">' + source + link + date + '</li>';
     }
   }
-  for (j = 2022; j >= 2012; j--) {
+  for (j = 2030; j >= 2000; j--) {
     html += '<h3>' + j + '</h3><ul>';
     if (language == "SelectLang" && mediatype == "SelectMed") {
       for (i = 1; i < data.length; i++) {
@@ -120,7 +120,7 @@ function generateTablePLP(data) {
       html += '<li class="returned">' + source + link + date + '</li>';
     }
   }
-  for (j = 2022; j >= 2012; j--) {
+  for (j = 2030; j >= 2000; j--) {
     html += '<h3>' + j + '</h3><ul>';
     if (language == "SelectLang" && mediatype == "SelectMed") {
       for (i = 1; i < data.length; i++) {

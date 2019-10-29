@@ -29,6 +29,7 @@ function generateTableOSS(data) {
     var lang = data[i][9];
     var format = data[i][9];
     var format2 = data[i][10];
+    var broken = data[i][11]
     if (day !== '' && year !== '') {
       date = ' - ' + day + '/' + month + '/' + year
     } else if (day == '' && year !== '') {
@@ -38,6 +39,9 @@ function generateTableOSS(data) {
     }
     if (url !== ''){
     link = ', <a href="' + url + '">' + headline + '</a> ';
+    }
+    else if(url !== '' && broken == "Broken"){
+    link = ', ' + headline;
     }
     else{
     link = ', ' + headline;
@@ -101,6 +105,7 @@ function generateTablePLP(data) {
     var lang = data[i][9];
     var format = data[i][9];
     var format2 = data[i][10];
+    var broken = data[i][11];
     if (day !== '' && year !== '') {
       date = ' - ' + day + '/' + month + '/' + year
     } else if (day == '' && year !== '') {
@@ -110,6 +115,9 @@ function generateTablePLP(data) {
     }
     if (url !== ''){
     link = ', <a href="' + url + '">' + headline + '</a> ';
+    }
+    else if(url !== '' && broken == "Broken"){
+    link = ', ' + headline;
     }
     else{
     link = ', ' + headline;

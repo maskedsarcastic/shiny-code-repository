@@ -6,17 +6,18 @@ $(document).ready(function(document) {
 function parseit() {
   $('tab1C').empty();
   $('tab2C').empty();
+  $('tab3C').empty();
   var input = $('#demo_csv').html();
   var data = $.csv.toArrays(input);
-  var displayPLP = generateTablePLP(data);
   var displayOSS = generateTableOSS(data);
+  var displayPLP = generateTablePLP(data);
 }
 
-function generateTablePLP(data) {
+function generateTableOSS(data) {
   var html = '';
-  var date = '';
-   function filterResults() {
-    var date = '';
+  var date = '';  
+  var link = '';      
+  function filterResults() {
     var project = data[i][0];
     var day = data[i][1];
     var month = data[i][2];
@@ -27,6 +28,7 @@ function generateTablePLP(data) {
     var country = data[i][7];
     var lang = data[i][9];
     var format = data[i][9];
+    var format2 = data[i][10];
     if (day !== '' && year !== '') {
       date = ' - ' + day + '/' + month + '/' + year
     } else if (day == '' && year !== '') {
@@ -34,12 +36,14 @@ function generateTablePLP(data) {
     } else {
       date = ''
     }
-    if (project == "PLP" && year == j && format === "Printed Press") {
-      html += '<li class="returned">' + source + ', ' + headline + date + '</li>';
-    } else if (project == "PLP" && year == j && format == "Television") {
-      html += '<li class="returned">' + source + ', ' + headline + date + '</li>';
-    } else if (project == "PLP" && year == j) {
-      html += '<li class="returned">' + source + ', <a href="' + url + '">' + headline + '</a> ' + date + '</li>';
+    if (url !== ''){
+    link = ', <a href="' + url + '">' + headline + '</a> ';
+    }
+    else{
+    link = ', ' + headline;
+    }
+    if (project == "OSS" && year == j) {
+      html += '<li class="returned">' + source + link + date + '</li>';
     }
   }
   for (j = 2022; j >= 2012; j--) {
@@ -51,7 +55,7 @@ function generateTablePLP(data) {
     }
     if (language == "SelectLang" && mediatype !== "SelectMed") {
       for (i = 1; i < data.length; i++) {
-        if (data[i][9] == mediatype) {
+        if (data[i][9] == mediatype || data[i][10] == mediatype) {
           filterResults();
         }
       }
@@ -63,7 +67,7 @@ function generateTablePLP(data) {
       }
     } else {
       for (i = 1; i < data.length; i++) {
-        if (data[i][8] == language && data[i][9] == mediatype) {
+        if (data[i][8] == language && data[i][9] == mediatype || data[i][10] == mediatype) {
           filterResults();
         }
       }
@@ -81,11 +85,11 @@ function generateTablePLP(data) {
   }
 }
 
-function generateTableOSS(data) {
+function generateTablePLP(data) {
   var html = '';
-  var date = '';
-   function filterResults() {
-    var date = '';
+  var date = '';  
+  var link = '';      
+  function filterResults() {
     var project = data[i][0];
     var day = data[i][1];
     var month = data[i][2];
@@ -96,6 +100,7 @@ function generateTableOSS(data) {
     var country = data[i][7];
     var lang = data[i][9];
     var format = data[i][9];
+    var format2 = data[i][10];
     if (day !== '' && year !== '') {
       date = ' - ' + day + '/' + month + '/' + year
     } else if (day == '' && year !== '') {
@@ -103,12 +108,14 @@ function generateTableOSS(data) {
     } else {
       date = ''
     }
-    if (project == "OSS" && year == j && format === "Printed Press") {
-      html += '<li class="returned">' + source + ', ' + headline + date + '</li>';
-    } else if (project == "OSS" && year == j && format == "Television") {
-      html += '<li class="returned">' + source + ', ' + headline + date + '</li>';
-    } else if (project == "OSS" && year == j) {
-      html += '<li class="returned">' + source + ', <a href="' + url + '">' + headline + '</a> ' + date + '</li>';
+    if (url !== ''){
+    link = ', <a href="' + url + '">' + headline + '</a> ';
+    }
+    else{
+    link = ', ' + headline;
+    }
+    if (project == "PLP" && year == j) {
+      html += '<li class="returned">' + source + link + date + '</li>';
     }
   }
   for (j = 2022; j >= 2012; j--) {
@@ -120,7 +127,7 @@ function generateTableOSS(data) {
     }
     if (language == "SelectLang" && mediatype !== "SelectMed") {
       for (i = 1; i < data.length; i++) {
-        if (data[i][9] == mediatype) {
+        if (data[i][9] == mediatype || data[i][10] == mediatype) {
           filterResults();
         }
       }
@@ -132,7 +139,7 @@ function generateTableOSS(data) {
       }
     } else {
       for (i = 1; i < data.length; i++) {
-        if (data[i][8] == language && data[i][9] == mediatype) {
+        if (data[i][8] == language && data[i][9] == mediatype || data[i][10] == mediatype) {
           filterResults();
         }
       }
@@ -150,9 +157,11 @@ function generateTableOSS(data) {
   }
 }
 
+
 function getParam() {
   $("#tab1C").empty();
   $("#tab2C").empty();
+  $("#tab3C").empty();
   language = '';
   mediatype = '';
   

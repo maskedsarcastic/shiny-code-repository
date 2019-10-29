@@ -37,11 +37,8 @@ function generateTableOSS(data) {
     } else {
       date = ''
     }
-    if (url !== ''){
+    if (url !== '' && broken !== "Broken"){
     link = ', <a href="' + url + '">' + headline + '</a> ';
-    }
-    else if(url !== '' && broken !== ''){
-    link = ', ' + headline;
     }
     else{
     link = ', ' + headline;
@@ -113,11 +110,8 @@ function generateTablePLP(data) {
     } else {
       date = ''
     }
-    if (url !== ''){
+    if (url !== '' && broken !== "Broken"){
     link = ', <a href="' + url + '">' + headline + '</a> ';
-    }
-    else if(url !== '' && broken !== ''){
-    link = ', ' + headline;
     }
     else{
     link = ', ' + headline;

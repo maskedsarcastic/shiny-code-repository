@@ -40,7 +40,7 @@ function generateTableOSS(data) {
     if (url !== ''){
     link = ', <a href="' + url + '">' + headline + '</a> ';
     }
-    else if(url !== '' && broken == "Broken"){
+    else if(url !== '' && broken !== ''){
     link = ', ' + headline;
     }
     else{
@@ -116,7 +116,7 @@ function generateTablePLP(data) {
     if (url !== ''){
     link = ', <a href="' + url + '">' + headline + '</a> ';
     }
-    else if(url !== '' && broken == "Broken"){
+    else if(url !== '' && broken !== ''){
     link = ', ' + headline;
     }
     else{

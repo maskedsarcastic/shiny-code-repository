@@ -68,7 +68,7 @@ function generateTableOSS(data) {
       }
     } else {
       for (i = 1; i < data.length; i++) {
-        if (data[i][8] == language && data[i][9] == mediatype || data[i][10] == mediatype) {
+        if (data[i][8] == language && (data[i][9] == mediatype || data[i][10] == mediatype)) {
           filterResults();
         }
       }
@@ -141,7 +141,7 @@ function generateTablePLP(data) {
       }
     } else {
       for (i = 1; i < data.length; i++) {
-        if (data[i][8] == language && data[i][9] == mediatype || data[i][10] == mediatype) {
+        if (data[i][8] == language && (data[i][9] == mediatype || data[i][10] == mediatype)) {
           filterResults();
         }
       }

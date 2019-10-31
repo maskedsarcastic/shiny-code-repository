@@ -8,9 +8,19 @@ function parseit() {
   $('tab2C').empty();
   $('tab3C').empty();
   var input = $('#demo_csv').html();
-  var data = $.csv.toArrays(input);
-  var displayOSS = generateTableOSS(data);
-  var displayPLP = generateTablePLP(data);
+var sortByCol2 = function(data) {
+  data.sort(function(a,b){
+    if (a[2]==b[2]){
+    return b[1]-a[1];
+    } 
+  return b[2] - a[2];
+
+  });
+  return data;
+}
+  var datesort = $.csv.toArrays(input, { onPostParse: sortByCol2 });
+  var displayOSS = generateTableOSS(datesort);
+  var displayPLP = generateTablePLP(datesort);
 }
 
 function generateTableOSS(data) {

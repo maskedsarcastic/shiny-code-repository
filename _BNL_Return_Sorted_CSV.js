@@ -48,7 +48,7 @@ function generateTableOSS(data) {
       date = ''
     }
     if (url !== '' && broken !== "Broken"){
-    link = ', <a href="' + url + '">' + headline + '</a> ';
+    link = ', <a href="' + url + '" target="_blank">' + headline + '</a> ';
     }
     else{
     link = ', ' + headline;
@@ -121,7 +121,7 @@ function generateTablePLP(data) {
       date = ''
     }
     if (url !== '' && broken !== "Broken"){
-    link = ', <a href="' + url + '">' + headline + '</a> ';
+    link = ', <a href="' + url + '" target="_blank">' + headline + '</a> ';
     }
     else{
     link = ', ' + headline;

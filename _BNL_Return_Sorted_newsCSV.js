@@ -1,7 +1,16 @@
 jQuery(document).ready(function($) {
-$(document).ready(function(document) {
+$(document).ready(function(document) { 
+$.ajax({
+	  type: "GET",  
+	  url: "http://www.bnl.chalmers.se/wordpress/wp-content/uploads/2020/01/BNL_News.csv",
+	  dataType: "text",       
+	  success: function(response)  
+	  {
+		var test = $('#demo_csv').append(response);
   getParam();
+}
 });
+}); 
 
 function parseit() {
   $('tab1C').empty();

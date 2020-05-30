@@ -15,15 +15,13 @@ $.ajax({
 function parseit() {
   $('tab1C').empty();
   $('tab2C').empty();
-  $('tab3C').empty();
   var input = $('#demo_csv').html();
-var sortByCol2 = function(data) {
-  data.sort(function(a,b){
-    if (a[2]==b[2]){
-    return b[1]-a[1];
+  var sortByCol2 = function(data) {
+    data.sort(function(a,b){
+      if (a[2]==b[2]){
+      return b[1]-a[1];
     } 
-  return b[2] - a[2];
-
+    return b[2]-a[2];
   });
   return data;
 }
@@ -57,10 +55,10 @@ function generateTableOSS(data) {
       date = ''
     }
     if (url !== '' && broken !== "Broken"){
-    link = ', <a href="' + url + '" target="_blank">' + headline + '</a> ';
+      link = ', <a href="' + url + '" target="_blank">' + headline + '</a> ';
     }
     else{
-    link = ', ' + headline;
+      link = ', ' + headline;
     }
     if (project == "OSS" && year == j) {
       html += '<li class="returned">' + source + link + date + '</li>';
@@ -130,10 +128,10 @@ function generateTablePLP(data) {
       date = ''
     }
     if (url !== '' && broken !== "Broken"){
-    link = ', <a href="' + url + '" target="_blank">' + headline + '</a> ';
+      link = ', <a href="' + url + '" target="_blank">' + headline + '</a> ';
     }
     else{
-    link = ', ' + headline;
+      link = ', ' + headline;
     }
     if (project == "PLP" && year == j) {
       html += '<li class="returned">' + source + link + date + '</li>';
@@ -182,7 +180,6 @@ function generateTablePLP(data) {
 function getParam() {
   $("#tab1C").empty();
   $("#tab2C").empty();
-  $("#tab3C").empty();
   language = '';
   mediatype = '';
   

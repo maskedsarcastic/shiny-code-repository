@@ -2,7 +2,7 @@ jQuery(document).ready(function($) {
 $(document).ready(function(document) { 
 $.ajax({
 	  type: "GET",  
-	  url: "https://cbpr.se/wp-content/uploads/2020/05/BNL_News.csv",
+	  url: "https://cbpr.se/wp-content/uploads/2021/11/BNL_News.csv",
 	  dataType: "text",       
 	  success: function(response)  
 	  {

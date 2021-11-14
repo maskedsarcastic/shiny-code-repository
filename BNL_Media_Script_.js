@@ -2,7 +2,7 @@ jQuery(document).ready(function($) {
 $(document).ready(function(document) { 
 $.ajax({
 	  type: "GET",  
-	  url: "https://github.com/maskedsarcastic/shiny-code-repository/blob/master/BNL_News.csv",
+	  url: "https://cbpr.se/wp-content/uploads/2021/11/BNL_News.csv",
 	  dataType: "text",       
 	  success: function(response)  
 	  {
